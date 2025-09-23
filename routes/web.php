@@ -30,8 +30,8 @@ Route::get('/about', function(){
 
 
 
-/*Route::get('/matakuliah/show/{param1?}', function ($param1 = 'Masukkan kode matakuliah!') {
+Route::get('/matakuliah/show/{param1?}', function ($param1 = 'Masukkan kode matakuliah!') {
     return 'Anda mengakses matakuliah : '.$param1;
-});*/
+});
 
 

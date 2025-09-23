@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\MahasiswaController;
 
 Route::get('/', function () {
@@ -34,4 +36,6 @@ Route::get('/matakuliah/show/{param1?}', function ($param1 = 'Masukkan kode mata
     return 'Anda mengakses matakuliah : '.$param1;
 });
 
+Route::get('/home', [HomeController::class, 'index']);
 
+Route::get('/pegawai', [PegawaiController::class, 'index']);

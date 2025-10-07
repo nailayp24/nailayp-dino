@@ -37,7 +37,7 @@ Route::get('/matakuliah/show/{param1?}', function ($param1 = 'Masukkan kode mata
     return 'Anda mengakses matakuliah : '.$param1;
 });
 
-Route::get('/home', [HomeController::class, 'index']);
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/pegawai', [PegawaiController::class, 'index']);
 

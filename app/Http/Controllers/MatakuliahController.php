@@ -33,13 +33,11 @@ class MatakuliahController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $param1)
+    public function show(string $id)
     {
-        if($param1 == 'detail'){
-            return view('halaman-mahasiswa-detail');
-        }else if($param1 == 'profil'){
-            return view('halaman-mahasiswa-profil');
-        }
+        if($param1 == 'index') {
+            return view('halaman-index-mahasiswa');
+        } 
     }
 
     /**

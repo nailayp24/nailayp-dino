@@ -1,7 +1,7 @@
 @extends('layouts.admin.app')
 
 @section('content')
-    {{-- start main content --}}
+    {{-- START MAIN CONTENT --}}
     <div class="py-4">
         <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
             <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
@@ -25,12 +25,16 @@
                 <p class="mb-0">Form untuk menambahkan data User baru.</p>
             </div>
             <div>
-                <a href="" class="btn btn-primary"><i class="far fa-question-circle me-1"></i> Kembali</a>
+                <a href="{{ route('user.index') }}" class="btn btn-primary"><i class="far fa-question-circle me-1"></i>
+                    Kembali</a>
             </div>
         </div>
     </div>
-
-
+    @if (session('success'))
+        <div class="alert alert-info">
+            {!! session('success') !!}
+        </div>
+    @endif
     <div class="row">
         <div class="col-12 mb-4">
             <div class="card border-0 shadow components-section">
@@ -39,33 +43,34 @@
                         @csrf
                         <div class="row mb-4">
                             <div class="col-lg-4 col-sm-6">
-                                <!-- name -->
+
+                                <!-- Name -->
                                 <div class="mb-3">
-                                    <label for="name" class="form-label">name</label>
-                                    <input type="text" id="name" name="name" value="{{ old('name') }}" class="form-control" required>
+                                    <label for="name" class="form-label">Name</label>
+                                    <input type="text" id="name" class="form-control" required name="name">
                                 </div>
-                                <!-- email -->
+
+                                <!-- Email -->
                                 <div class="mb-3">
-                                    <label for="email" class="form-label">email</label>
-                                    <input type="email" id="email" name="email" value="{{ old('email') }}"
-                                        class="form-control" required>
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="text" id="email" class="form-control" required name="email">
                                 </div>
                             </div>
+
                             <div class="col-lg-4 col-sm-6">
-                                <!-- password -->
+                                <!-- Password -->
                                 <div class="mb-3">
-                                    <label for="password" class="form-label">password</label>
-                                    <input type="password" id="password" name= "password" value="{{ old('password') }}"
-                                        class="form-control">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" id="password" class="form-control" name="password">
                                 </div>
-                                <div class="col-lg-4 col-sm-12">
-                                    <!-- confismation password -->
-                                    <div class="mb-3">
-                                        <label for="password_confimation" class="form-label">Confirmation password</label>
-                                        <input type="password_confimation" id="password_confimation" value="{{ old('password_confimation') }}"
-                                            class="form-control" name="email" required>
-                                    </div>
+
+                                <div class="col-lg-4 col-sm-6">
+                                <!-- Password Confirmation -->
+                                <div class="mb-3">
+                                    <label for="password_confirmation" class="form-label">Password Confirmation</label>
+                                    <input type="password" id="password_confirmation" class="form-control" name="password_confirmation">
                                 </div>
+                            </div>
 
 
                                 <!-- Buttons -->
@@ -79,8 +84,8 @@
                     </form>
                 </div>
 
-
             </div>
         </div>
-        {{-- end mani content --}}
-    @endsection
+    </div>
+    {{-- END MAIN CONTENT --}}
+@endsection

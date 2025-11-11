@@ -35,10 +35,10 @@ class MahasiswaController extends Controller
      */
     public function show(string $param1)
     {
-        if($param1 == 'index'){
-            return view('halaman-matakuliah-index');
-        }else if($param1 == 'show'){
-            return view('halaman-matakuliah-show');
+        if($param1 == 'detail'){
+        return view('halaman-mahasiswa-detail');
+        } else if ($param1 == 'profil'){
+            return view('halaman-mahasiswa-profil');
         }
     }
 

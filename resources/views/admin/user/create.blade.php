@@ -1,3 +1,4 @@
+
 <!--
 
 =========================================================
@@ -51,13 +52,13 @@
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="120x120"
-        href="{{ asset('assets-admin') }}/assset/img/favicon/apple-touch-icon.png">
+        href="{{ asset('assets-admin') }}/asset/img/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32"
-        href="{{ asset('assets-admin') }}/assset/img/favicon/favicon-32x32.png">
+        href="{{ asset('assets-admin') }}/asset/img/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16"
-        href="{{ asset('assets-admin') }}/assset/img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="{{ asset('assets-admin') }}/assset/img/favicon/site.webmanifest">
-    <link rel="mask-icon" href="{{ asset('assets-admin') }}/assset/img/favicon/safari-pinned-tab.svg" color="#ffffff">
+        href="{{ asset('assets-admin') }}/asset/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="{{ asset('assets-admin') }}/asset/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="{{ asset('assets-admin') }}/asset/img/favicon/safari-pinned-tab.svg" color="#ffffff">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
 
@@ -81,9 +82,9 @@
 
     <nav class="navbar navbar-dark navbar-theme-primary px-4 col-12 d-lg-none">
         <a class="navbar-brand me-lg-5" href="../../index.html">
-            <img class="navbar-brand-dark" src="{{ asset('assets-admin') }}/assset/img/brand/light.svg"
+            <img class="navbar-brand-dark" src="{{ asset('assets-admin') }}/asset/img/brand/light.svg"
                 alt="Volt logo" /> <img class="navbar-brand-light"
-                src="{{ asset('assets-admin') }}/assset/img/brand/dark.svg" alt="Volt logo" />
+                src="{{ asset('assets-admin') }}/asset/img/brand/dark.svg" alt="Volt logo" />
         </a>
         <div class="d-flex align-items-center">
             <button class="navbar-toggler d-lg-none collapsed" type="button" data-bs-toggle="collapse"
@@ -100,12 +101,12 @@
                 class="user-card d-flex d-md-none align-items-center justify-content-between justify-content-md-center pb-4">
                 <div class="d-flex align-items-center">
                     <div class="avatar-lg me-4">
-                        <img src="{{ asset('assets-admin') }}/img/team/profile-picture-3.jpg"
+                        <img src="{{ asset('assets-admin') }}/asset/img/team/profile-picture-3.jpg"
                             class="card-img-top rounded-circle border-white" alt="Bonnie Green">
                     </div>
                     <div class="d-block">
                         <h2 class="h5 mb-3">Hi, Jane</h2>
-                        <a href="{{ asset('assets-admin') }}/pages/examples/sign-in.html"
+                        <a href="{{ asset('assets-admin') }}/css/examples/sign-in.html"
                             class="btn btn-secondary btn-sm d-inline-flex align-items-center">
                             <svg class="icon icon-xxs me-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -133,14 +134,14 @@
                 <li class="nav-item">
                     <a href="../../index.html" class="nav-link d-flex align-items-center">
                         <span class="sidebar-icon">
-                            <img src="{{ asset('assets-admin') }}/assset/img/brand/light.svg" height="20"
+                            <img src="{{ asset('assets-admin') }}/asset/img/brand/light.svg" height="20"
                                 width="20" alt="Volt Logo">
                         </span>
                         <span class="mt-1 ms-1 sidebar-text">Volt Overview</span>
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a href="{{ asset('assets-admin') }}/pages/dashboard/dashboard.html" class="nav-link">
+                    <a href="{{ asset('assets-admin') }}/css/dashboard/dashboard.html" class="nav-link">
                         <span class="sidebar-icon">
                             <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -171,7 +172,7 @@
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a href="{{ asset('assets-admin') }}/pages/transactions.html" class="nav-link">
+                    <a href="{{ asset('assets-admin') }}/css/transactions.html" class="nav-link">
                         <span class="sidebar-icon">
                             <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -185,7 +186,7 @@
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a href="{{ asset('assets-admin') }}/pages/settings.html" class="nav-link">
+                    <a href="{{ asset('assets-admin') }}/css/settings.html" class="nav-link">
                         <span class="sidebar-icon">
                             <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -262,7 +263,7 @@
                         <ul class="flex-column nav">
                             <li class="nav-item ">
                                 <a class="nav-link"
-                                    href="{{ asset('assets-admin') }}/pages/tables/bootstrap-tables.html">
+                                    href="{{ asset('assets-admin') }}/css/tables/bootstrap-tables.html">
                                     <span class="sidebar-text">Bootstrap Tables</span>
                                 </a>
                             </li>
@@ -296,39 +297,39 @@
                     <div class="multi-level collapse " role="list" id="submenu-pages" aria-expanded="false">
                         <ul class="flex-column nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ asset('assets-admin') }}/pages/examples/sign-in.html">
+                                <a class="nav-link" href="{{ asset('assets-admin') }}/css/examples/sign-in.html">
                                     <span class="sidebar-text">Sign In</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ asset('assets-admin') }}/pages/examples/sign-up.html">
+                                <a class="nav-link" href="{{ asset('assets-admin') }}/css/examples/sign-up.html">
                                     <span class="sidebar-text">Sign Up</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
-                                    href="{{ asset('assets-admin') }}/pages/examples/forgot-password.html">
+                                    href="{{ asset('assets-admin') }}/css/examples/forgot-password.html">
                                     <span class="sidebar-text">Forgot password</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
-                                    href="{{ asset('assets-admin') }}/pages/examples/reset-password.html">
+                                    href="{{ asset('assets-admin') }}/css/examples/reset-password.html">
                                     <span class="sidebar-text">Reset password</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ asset('assets-admin') }}/pages/examples/lock.html">
+                                <a class="nav-link" href="{{ asset('assets-admin') }}/css/examples/lock.html">
                                     <span class="sidebar-text">Lock</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ asset('assets-admin') }}/pages/examples/404.html">
+                                <a class="nav-link" href="{{ asset('assets-admin') }}/css/examples/404.html">
                                     <span class="sidebar-text">404 Not Found</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ asset('assets-admin') }}/pages/examples/500.html">
+                                <a class="nav-link" href="{{ asset('assets-admin') }}/css/examples/500.html">
                                     <span class="sidebar-text">500 Not Found</span>
                                 </a>
                             </li>
@@ -369,29 +370,29 @@
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="{{ asset('assets-admin') }}/pages/components/buttons.html">
+                                <a class="nav-link" href="{{ asset('assets-admin') }}/css/components/buttons.html">
                                     <span class="sidebar-text">Buttons</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
                                 <a class="nav-link"
-                                    href="{{ asset('assets-admin') }}/pages/components/notifications.html">
+                                    href="{{ asset('assets-admin') }}/css/components/notifications.html">
                                     <span class="sidebar-text">Notifications</span>
                                 </a>
                             </li>
                             <li class="nav-item  active ">
-                                <a class="nav-link" href="{{ asset('assets-admin') }}/pages/components/forms.html">
+                                <a class="nav-link" href="{{ asset('assets-admin') }}/css/components/forms.html">
                                     <span class="sidebar-text">Forms</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="{{ asset('assets-admin') }}/pages/components/modals.html">
+                                <a class="nav-link" href="{{ asset('assets-admin') }}/css/components/modals.html">
                                     <span class="sidebar-text">Modals</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
                                 <a class="nav-link"
-                                    href="{{ asset('assets-admin') }}/pages/components/typography.html">
+                                    href="{{ asset('assets-admin') }}/css/components/typography.html">
                                     <span class="sidebar-text">Typography</span>
                                 </a>
                             </li>
@@ -417,14 +418,14 @@
                 <li class="nav-item">
                     <a href="https://themesberg.com" target="_blank" class="nav-link d-flex align-items-center">
                         <span class="sidebar-icon">
-                            <img src="{{ asset('assets-admin') }}/assset/img/themesberg.svg" height="20"
+                            <img src="{{ asset('assets-admin') }}/asset/img/themesberg.svg" height="20"
                                 width="28" alt="Themesberg Logo">
                         </span>
                         <span class="sidebar-text">Themesberg</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ asset('assets-admin') }}/pages/upgrade-to-pro.html"
+                    <a href="{{ asset('assets-admin') }}/css/upgrade-to-pro.html"
                         class="btn btn-secondary d-flex align-items-center justify-content-center btn-upgrade-pro">
                         <span class="sidebar-icon d-inline-flex align-items-center justify-content-center">
                             <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
@@ -487,7 +488,7 @@
                                             <div class="col-auto">
                                                 <!-- Avatar -->
                                                 <img alt="Image placeholder"
-                                                    src="{{ asset('assets-admin') }}/assset/img/team/profile-picture-1.jpg"
+                                                    src="{{ asset('assets-admin') }}/asset/img/team/profile-picture-1.jpg"
                                                     class="avatar-md rounded">
                                             </div>
                                             <div class="col ps-0 ms-2">
@@ -509,7 +510,7 @@
                                             <div class="col-auto">
                                                 <!-- Avatar -->
                                                 <img alt="Image placeholder"
-                                                    src="{{ asset('assets-admin') }}/assset/img/team/profile-picture-2.jpg"
+                                                    src="{{ asset('assets-admin') }}/asset/img/team/profile-picture-2.jpg"
                                                     class="avatar-md rounded">
                                             </div>
                                             <div class="col ps-0 ms-2">
@@ -531,7 +532,7 @@
                                             <div class="col-auto">
                                                 <!-- Avatar -->
                                                 <img alt="Image placeholder"
-                                                    src="{{ asset('assets-admin') }}/assset/img/team/profile-picture-3.jpg"
+                                                    src="{{ asset('assets-admin') }}/asset/img/team/profile-picture-3.jpg"
                                                     class="avatar-md rounded">
                                             </div>
                                             <div class="col ps-0 m-2">
@@ -553,7 +554,7 @@
                                             <div class="col-auto">
                                                 <!-- Avatar -->
                                                 <img alt="Image placeholder"
-                                                    src="{{ asset('assets-admin') }}/assset/img/team/profile-picture-4.jpg"
+                                                    src="{{ asset('assets-admin') }}/asset/img/team/profile-picture-4.jpg"
                                                     class="avatar-md rounded">
                                             </div>
                                             <div class="col ps-0 ms-2">
@@ -575,7 +576,7 @@
                                             <div class="col-auto">
                                                 <!-- Avatar -->
                                                 <img alt="Image placeholder"
-                                                    src="{{ asset('assets-admin') }}/assset/img/team/profile-picture-5.jpg"
+                                                    src="{{ asset('assets-admin') }}/asset/img/team/profile-picture-5.jpg"
                                                     class="avatar-md rounded">
                                             </div>
                                             <div class="col ps-0 ms-2">
@@ -610,7 +611,7 @@
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 <div class="media d-flex align-items-center">
                                     <img class="avatar rounded-circle" alt="Image placeholder"
-                                        src="{{ asset('assets-admin') }}/assset/img/team/profile-picture-3.jpg">
+                                        src="{{ asset('assets-admin') }}/asset/img/team/profile-picture-3.jpg">
                                     <div class="media-body ms-2 text-dark align-items-center d-none d-lg-block">
                                         <span class="mb-0 font-small fw-bold text-gray-900">Bonnie Green</span>
                                     </div>
@@ -683,14 +684,14 @@
                             </svg>
                         </a>
                     </li>
-                    <li class="breadcrumb-item"><a href="#">Pelanggan </a></li>
-                    <li class="breadcrumb-item active" aria-current="page"> Tambah pelanggan</li>
+                    <li class="breadcrumb-item"><a href="#">User</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Tambah Pelanggan</li>
                 </ol>
             </nav>
             <div class="d-flex justify-content-between w-100 flex-wrap">
                 <div class="mb-3 mb-lg-0">
-                    <h1 class="h4">Tambah Pelanggan</h1>
-                    <p class="mb-0">Form untuk menambah pelanggan baru</p>
+                    <h1 class="h4">Tambah User </h1>
+                    <p class="mb-0">From untuk menambah pelanggan baru.</p>
                 </div>
                 <div>
                     <a href="https://themesberg.com/docs/volt-bootstrap-5-dashboard/components/forms/"
@@ -702,178 +703,144 @@
         <div class="row">
             <div class="col-12 mb-4">
                 <div class="card border-0 shadow components-section">
-                    <div class="card-body">
-                        @if (session('success'))
-                            <div class="alert alert-info">
-                                {!! session('success')!!}
-                            </div>
-                        @endif
-                        <form action="{{ route('pelanggan.store') }}" method="POST">
-                            @csrf
+                   <div class="container">
+    <h2>Tambah User Baru</h2>
 
-                            <div class="row mb-4">
-                                <!-- First Name -->
-                                <div class="col-md-6 mb-3">
-                                    <label for="first_name" class="form-label">First Name</label>
-                                    <input type="text" name="first_name" id="first_name"
-                                        class="form-control @error('first_name') is-invalid @enderror"
-                                        value="{{ old('first_name') }}" required>
-                                    @error('first_name')
-                                        <div class="invalid-feedback">{{ $message }}</div>
-                                    @enderror
-                                </div>
+    <!-- Tampilkan pesan sukses -->
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
 
-                                <!-- Last Name -->
-                                <div class="col-md-6 mb-3">
-                                    <label for="last_name" class="form-label">Last Name</label>
-                                    <input type="text" name="last_name" id="last_name"
-                                        class="form-control @error('last_name') is-invalid @enderror"
-                                        value="{{ old('last_name') }}" required>
-                                    @error('last_name')
-                                        <div class="invalid-feedback">{{ $message }}</div>
-                                    @enderror
-                                </div>
+    <!-- Form input data user -->
+    <form action="{{ route('user.store') }}" method="POST">
+        @csrf
 
-                                <!-- Birthday -->
-                                <div class="col-md-6 mb-3">
-                                    <label for="birthday" class="form-label">Birthday</label>
-                                    <input type="date" name="birthday" id="birthday"
-                                        class="form-control @error('birthday') is-invalid @enderror"
-                                        value="{{ old('birthday') }}" required>
-                                    @error('birthday')
-                                        <div class="invalid-feedback">{{ $message }}</div>
-                                    @enderror
-                                </div>
+        <div class="mb-3">
+            <label for="name" class="form-label">Nama</label>
+            <input type="text" class="form-control @error('name') is-invalid @enderror"
+                   id="name" name="name" value="{{ old('name') }}" required>
+            @error('name')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
 
-                                <!-- Gender -->
-                                <div class="col-md-6 mb-3">
-                                    <label for="gender" class="form-label">Gender</label>
-                                    <select name="gender" id="gender"
-                                        class="form-select @error('gender') is-invalid @enderror" required>
-                                        <option value="">-- Select Gender --</option>
-                                        <option value="Male" {{ old('gender') == 'Male' ? 'selected' : '' }}>Male
-                                        </option>
-                                        <option value="Female" {{ old('gender') == 'Female' ? 'selected' : '' }}>
-                                            Female</option>
-                                        <option value="Other" {{ old('gender') == 'Other' ? 'selected' : '' }}>Other
-                                        </option>
-                                    </select>
-                                    @error('gender')
-                                        <div class="invalid-feedback">{{ $message }}</div>
-                                    @enderror
-                                </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control @error('email') is-invalid @enderror"
+                   id="email" name="email" value="{{ old('email') }}" required>
+            @error('email')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
 
-                                <!-- Email -->
-                                <div class="col-md-6 mb-3">
-                                    <label for="email" class="form-label">Email</label>
-                                    <input type="email" name="email" id="email"
-                                        class="form-control @error('email') is-invalid @enderror"
-                                        value="{{ old('email') }}" required>
-                                    @error('email')
-                                        <div class="invalid-feedback">{{ $message }}</div>
-                                    @enderror
-                                </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Phone (password)</label>
+            <input type="text" class="form-control @error('phone') is-invalid @enderror"
+                   id="password" name="password" value="{{ old('phone') }}" required>
+            @error('password')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+            <small class="form-text text-muted">Phone akan digunakan sebagai password.</small>
+        </div>
 
-                                <!-- Phone -->
-                                <div class="col-md-6 mb-3">
-                                    <label for="phone" class="form-label">Phone</label>
-                                    <input type="text" name="phone" id="phone"
-                                        class="form-control @error('phone') is-invalid @enderror"
-                                        value="{{ old('phone') }}" required>
-                                    @error('phone')
-                                        <div class="invalid-feedback">{{ $message }}</div>
-                                    @enderror
-                                </div>
-                            </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Konfirmasi(password)</label>
+            <input type="text" class="form-control @error('phone') is-invalid @enderror"
+                   id="phone" name="phone" value="{{ old('phone') }}" required>
+            @error('password_confirmation')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+            <small class="form-text text-muted">Phone akan digunakan sebagai password.</small>
+        </div>
 
-                            <div class="text-end">
-                                <button type="submit" class="btn btn-primary">Save</button>
-                                <a href="{{ route('pelanggan.index') }}" class="btn btn-secondary">Cancel</a>
-                            </div>
-                        </form>
+        <button type="submit" class="btn btn-primary">Simpan</button>
+    </form>
+</div>
+                </div>
+
+                <div class="theme-settings card bg-gray-800 pt-2 collapse" id="theme-settings">
+                    <div class="card-body bg-gray-800 text-white pt-4">
+                        <button type="button" class="btn-close theme-settings-close" aria-label="Close"
+                            data-bs-toggle="collapse" href="#theme-settings" role="button" aria-expanded="false"
+                            aria-controls="theme-settings"></button>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <p class="m-0 mb-1 me-4 fs-7">Open source <span role="img"
+                                    aria-label="gratitude">💛</span>
+                            </p>
+                            <a class="github-button" href="https://github.com/themesberg/volt-bootstrap-5-dashboard"
+                                data-color-scheme="no-preference: dark; light: light; dark: light;"
+                                data-icon="octicon-star" data-size="large" data-show-count="true"
+                                aria-label="Star themesberg/volt-bootstrap-5-dashboard on GitHub">Star</a>
+                        </div>
+                        <a href="https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard"
+                            target="_blank"
+                            class="btn btn-secondary d-inline-flex align-items-center justify-content-center mb-3 w-100">
+                            Download
+                            <svg class="icon icon-xs ms-2" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M2 9.5A3.5 3.5 0 005.5 13H9v2.586l-1.293-1.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 15.586V13h2.5a4.5 4.5 0 10-.616-8.958 4.002 4.002 0 10-7.753 1.977A3.5 3.5 0 002 9.5zm9 3.5H9V8a1 1 0 012 0v5z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                        <p class="fs-7 text-gray-300 text-center">Available in the following technologies:</p>
+                        <div class="d-flex justify-content-center">
+                            <a class="me-3"
+                                href="https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard"
+                                target="_blank">
+                                <img src="{{ asset('assets-admin') }}/asset/img/technologies/bootstrap-5-logo.svg"
+                                    class="image image-xs">
+                            </a>
+                            <a href="https://demo.themesberg.com/volt-react-dashboard/#/" target="_blank">
+                                <img src="{{ asset('assets-admin') }}/asset/img/technologies/react-logo.svg"
+                                    class="image image-xs">
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="theme-settings card bg-gray-800 pt-2 collapse" id="theme-settings">
-            <div class="card-body bg-gray-800 text-white pt-4">
-                <button type="button" class="btn-close theme-settings-close" aria-label="Close"
-                    data-bs-toggle="collapse" href="#theme-settings" role="button" aria-expanded="false"
-                    aria-controls="theme-settings"></button>
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <p class="m-0 mb-1 me-4 fs-7">Open source <span role="img" aria-label="gratitude">💛</span>
-                    </p>
-                    <a class="github-button" href="https://github.com/themesberg/volt-bootstrap-5-dashboard"
-                        data-color-scheme="no-preference: dark; light: light; dark: light;" data-icon="octicon-star"
-                        data-size="large" data-show-count="true"
-                        aria-label="Star themesberg/volt-bootstrap-5-dashboard on GitHub">Star</a>
+                <div class="card theme-settings bg-gray-800 theme-settings-expand" id="theme-settings-expand">
+                    <div class="card-body bg-gray-800 text-white rounded-top p-3 py-2">
+                        <span class="fw-bold d-inline-flex align-items-center h6">
+                            <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            Settings
+                        </span>
+                    </div>
                 </div>
-                <a href="https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard" target="_blank"
-                    class="btn btn-secondary d-inline-flex align-items-center justify-content-center mb-3 w-100">
-                    Download
-                    <svg class="icon icon-xs ms-2" fill="currentColor" viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M2 9.5A3.5 3.5 0 005.5 13H9v2.586l-1.293-1.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 15.586V13h2.5a4.5 4.5 0 10-.616-8.958 4.002 4.002 0 10-7.753 1.977A3.5 3.5 0 002 9.5zm9 3.5H9V8a1 1 0 012 0v5z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                </a>
-                <p class="fs-7 text-gray-300 text-center">Available in the following technologies:</p>
-                <div class="d-flex justify-content-center">
-                    <a class="me-3" href="https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard"
-                        target="_blank">
-                        <img src="{{ asset('assets-admin') }}/assset/img/technologies/bootstrap-5-logo.svg"
-                            class="image image-xs">
-                    </a>
-                    <a href="https://demo.themesberg.com/volt-react-dashboard/#/" target="_blank">
-                        <img src="{{ asset('assets-admin') }}/assset/img/technologies/react-logo.svg"
-                            class="image image-xs">
-                    </a>
-                </div>
-            </div>
-        </div>
 
-        <div class="card theme-settings bg-gray-800 theme-settings-expand" id="theme-settings-expand">
-            <div class="card-body bg-gray-800 text-white rounded-top p-3 py-2">
-                <span class="fw-bold d-inline-flex align-items-center h6">
-                    <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                    Settings
-                </span>
-            </div>
-        </div>
-
-        <footer class="bg-white rounded shadow p-5 mb-4 mt-4">
-            <div class="row">
-                <div class="col-12 col-md-4 col-xl-6 mb-4 mb-md-0">
-                    <p class="mb-0 text-center text-lg-start">© 2019-<span class="current-year"></span> <a
-                            class="text-primary fw-normal" href="https://themesberg.com"
-                            target="_blank">Themesberg</a></p>
-                </div>
-                <div class="col-12 col-md-8 col-xl-6 text-center text-lg-start">
-                    <!-- List -->
-                    <ul class="list-inline list-group-flush list-group-borderless text-md-end mb-0">
-                        <li class="list-inline-item px-0 px-sm-2">
-                            <a href="https://themesberg.com/about">About</a>
-                        </li>
-                        <li class="list-inline-item px-0 px-sm-2">
-                            <a href="https://themesberg.com/themes">Themes</a>
-                        </li>
-                        <li class="list-inline-item px-0 px-sm-2">
-                            <a href="https://themesberg.com/blog">Blog</a>
-                        </li>
-                        <li class="list-inline-item px-0 px-sm-2">
-                            <a href="https://themesberg.com/contact">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </footer>
+                <footer class="bg-white rounded shadow p-5 mb-4 mt-4">
+                    <div class="row">
+                        <div class="col-12 col-md-4 col-xl-6 mb-4 mb-md-0">
+                            <p class="mb-0 text-center text-lg-start">© 2019-<span class="current-year"></span> <a
+                                    class="text-primary fw-normal" href="https://themesberg.com"
+                                    target="_blank">Themesberg</a></p>
+                        </div>
+                        <div class="col-12 col-md-8 col-xl-6 text-center text-lg-start">
+                            <!-- List -->
+                            <ul class="list-inline list-group-flush list-group-borderless text-md-end mb-0">
+                                <li class="list-inline-item px-0 px-sm-2">
+                                    <a href="https://themesberg.com/about">About</a>
+                                </li>
+                                <li class="list-inline-item px-0 px-sm-2">
+                                    <a href="https://themesberg.com/themes">Themes</a>
+                                </li>
+                                <li class="list-inline-item px-0 px-sm-2">
+                                    <a href="https://themesberg.com/blog">Blog</a>
+                                </li>
+                                <li class="list-inline-item px-0 px-sm-2">
+                                    <a href="https://themesberg.com/contact">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </footer>
     </main>
 
     <!-- Core -->
@@ -915,7 +882,7 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 
     <!-- Volt JS -->
-    <script src="{{ asset('assets-admin') }}/assset/js/volt.js"></script>
+    <script src="{{ asset('assets-admin') }}/asset/js/volt.js"></script>
 
 
 </body>

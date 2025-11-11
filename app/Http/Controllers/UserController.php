@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class QuestionController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $data['dataUser'] = User::all();
+		return view('admin.user.index',$data);
     }
 
     /**
@@ -19,7 +21,7 @@ class QuestionController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.user.create');
     }
 
     /**
@@ -27,18 +29,14 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
-        $request->validate([
-		    'nama'  => 'required|max:10',
-		    'email' => ['required','email'],
-		    'pertanyaan' => 'required|max:300|min:8',
-		],[
-            'nama.required'=>'Nama tidak boleh kosong',
-            'email.email' => 'Email tidak valid',
-            'pertanyaan.pertanyaan' => 'nama tidak boleh kosong',
-        ]);
+        $data['name'] = $request->name;
+        $data['password']     = $request->password;
+        $data['email']      = $request->email;
+        $data['password_confirmation']      = $request->password_confirmation;
 
-        return view('home-question-respon', $data);
+        User::create($data);
+
+        return redirect()->route('user.create')->with('success', 'Penambahan Data Berhasil!');
     }
 
     /**

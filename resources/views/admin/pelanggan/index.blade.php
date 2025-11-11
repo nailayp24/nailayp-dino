@@ -1,6 +1,7 @@
 @extends('layouts.admin.app')
 
 @section('content')
+    {{-- start main content --}}
     <div class="py-4">
         <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
             <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
@@ -15,189 +16,93 @@
                     </a>
                 </li>
                 <li class="breadcrumb-item"><a href="#">Pelanggan</a></li>
-                <li class="breadcrumb-item active" aria-current="page"></li>
             </ol>
         </nav>
         <div class="d-flex justify-content-between w-100 flex-wrap">
             <div class="mb-3 mb-lg-0">
                 <h1 class="h4">Data Pelanggan</h1>
-                <p class="mb-0">Form untuk menambah pelanggan baru</p>
+                <p class="mb-0">List data seluruh pelanggan</p>
             </div>
             <div>
-                <a href="pelanggan.create" class="btn btn-success text-white"><i class="far fa-question-circle me-1"></i>
+                <a href="{{ route('pelanggan.create') }}" class="btn btn-success text-white"><i
+                        class="far fa-question-circle me-1"></i>
                     Tambah Pelanggan</a>
             </div>
         </div>
     </div>
+
+    @if (session('success'))
+        <div class="alert alert-success">{!! session('success') !!}</div>
+    @endif
+
     <div class="row">
-        <div class="col-12">
-            <div class="card border-0 shadow">
-                <div class="card-header bg-white border-bottom d-flex justify-content-between align-items-center">
-                    <h5 class="mb-0">Data Pelanggan</h5>
-                    <a href="{{ route('pelanggan.create') }}" class="btn text-white" style="background-color: #172b4d;">
-                        + Tambah Pelanggan
-                    </a>
-                </div>
-
+        <div class="col-12 mb-4">
+            <div class="card border-0 shadow mb-4">
                 <div class="card-body">
-                    @if (session('success'))
-                        <div class="alert alert-info">
-                            {!! session('success') !!}
-                        </div>
-                    @endif
-
-                    @if ($dataPelanggan->isEmpty())
-                        <div class="text-center text-muted">
-                            <p>Belum ada data pelanggan.</p>
-                        </div>
-                    @else
-                        <div class="table-responsive">
-                            <table class="table table-striped align-middle">
-                                <thead class="table-light">
+                    <div class="table-responsive">
+                        <table id="table-pelanggan" class="table table-centered table-nowrap mb-0 rounded">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th class="border-0">First Name</th>
+                                    <th class="border-0">Last Name</th>
+                                    <th class="border-0">Birthday</th>
+                                    <th class="border-0">Gender</th>
+                                    <th class="border-0">Email</th>
+                                    <th class="border-0">Phone</th>
+                                    <th class="border-0 rounded-end">Edit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (session('success'))
+                                    <div class="alert alert-info">
+                                        {!! session('success') !!}
+                                    </div>
+                                @endif
+                                @foreach ($dataPelanggan as $item)
                                     <tr>
-                                        <th>No</th>
-                                        <th>First Name</th>
-                                        <th>Last Name</th>
-                                        <th>Gender</th>
-                                        <th>Email</th>
-                                        <th>Phone</th>
-                                        <th>Birthday</th>
-                                        <th>Aksi</th>
+                                        <td>{{ $item->first_name }}</td>
+                                        <td>{{ $item->last_name }}</td>
+                                        <td>{{ $item->birthday }}</td>
+                                        <td>{{ $item->gender }}</td>
+                                        <td>{{ $item->email }}</td>
+                                        <td>{{ $item->phone }}</td>
+                                        <td><a href="{{ route('pelanggan.edit', $item->pelanggan_id) }}"
+                                                class="btn btn-info btn-sm">
+                                                <svg class="icon icon-xs me-2" data-slot="icon" fill="none"
+                                                    stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24"
+                                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582
+                                                                16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1
+                                                                .897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75
+                                                                21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10">
+                                                    </path>
+                                                </svg>
+                                                Edit
+                                            </a>
+                                            <form action="" method="POST" style="display:inline">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger btn-sm">
+                                                    <svg class="icon icon-xs me-2" data-slot="icon" fill="none"
+                                                        stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24"
+                                                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0">
+                                                        </path>
+                                                    </svg>
+                                                    Hapus
+                                                </button>
+                                            </form>
+                                        </td>
                                     </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($dataPelanggan as $index => $p)
-                                        <tr>
-                                            <td>{{ $index + 1 }}</td>
-                                            <td>{{ $p->first_name }}</td>
-                                            <td>{{ $p->last_name }}</td>
-                                            <td>{{ $p->gender }}</td>
-                                            <td>{{ $p->email }}</td>
-                                            <td>{{ $p->phone }}</td>
-                                            <td>{{ $p->birthday }}</td>
-                                            <td>
-                                                <a href="{{ route('pelanggan.edit', $item->id) }}"
-                                                    class="btn btn-sm btn-warning">Edit</a>
-
-                                                <form action="{{ route('pelanggan.destroy', $p->id) }}" method="POST"
-                                                    class="d-inline"
-                                                    onsubmit="return confirm('Yakin ingin menghapus data ini?')">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-sm btn-danger">
-                                                        Hapus
-                                                    </button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-                    @endif
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-    {{-- <div class="row">
-        <div class="col-12">
-            <div class="card border-0 shadow">
-                <div class="card-header bg-white border-bottom">
-                    <h5 class="mb-0">Input Data Pelanggan</h5>
-                </div>
-                <div class="card-body">
-
-                    @if (session('success'))
-                        <div class="alert alert-info">
-                            {!! session('success') !!}
-                        </div>
-                    @endif
-
-                    <form action="{{ route('pelanggan.store') }}" method="POST">
-                        @csrf
-
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6 mb-3">
-                                <label for="first_name" class="form-label">First name</label>
-                                <input type="text" class="form-control @error('first_name') is-invalid @enderror"
-                                    id="first_name" name="first_name" value="{{ old('first_name') }}" maxlength="100"
-                                    required>
-                                @error('first_name')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                @enderror
-                            </div>
-
-                            <div class="col-lg-4 col-md-6 mb-3">
-                                <label for="birthday" class="form-label">Birthday</label>
-                                <input type="date" class="form-control @error('birthday') is-invalid @enderror"
-                                    id="birthday" name="birthday" value="{{ old('birthday') }}">
-                                @error('birthday')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                @enderror
-                            </div>
-
-                            <div class="col-lg-4 col-md-12 mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control @error('email') is-invalid @enderror"
-                                    id="email" name="email" value="{{ old('email') }}" maxlength="255" required>
-                                @error('email')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6 mb-3">
-                                <label for="last_name" class="form-label">Last name</label>
-                                <input type="text" class="form-control @error('last_name') is-invalid @enderror"
-                                    id="last_name" name="last_name" value="{{ old('last_name') }}" maxlength="100">
-                                @error('last_name')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                @enderror
-                            </div>
-
-                            <div class="col-lg-4 col-md-6 mb-3">
-                                <label for="gender" class="form-label">Gender</label>
-                                <select class="form-select @error('gender') is-invalid @enderror" id="gender"
-                                    name="gender" required>
-                                    <option value="" disabled selected>-- Pilih --</option>
-                                    <option value="Male" {{ old('gender') == 'Male' ? 'selected' : '' }}>
-                                        Male
-                                    </option>
-                                    <option value="Female" {{ old('gender') == 'Female' ? 'selected' : '' }}>
-                                        Female</option>
-                                    <option value="Other" {{ old('gender') == 'Other' ? 'selected' : '' }}>
-                                        Other
-                                    </option>
-                                </select>
-                                @error('gender')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                @enderror
-                            </div>
-
-                            <div class="col-lg-4 col-md-12 mb-3">
-                                <label for="phone" class="form-label">Phone</label>
-                                <input type="text" class="form-control @error('phone') is-invalid @enderror"
-                                    id="phone" name="phone" value="{{ old('phone') }}" maxlength="20">
-                                @error('phone')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <hr class="mt-0">
-
-                        <div class="text-end">
-                            <button type="submit" class="btn text-white me-2"
-                                style="background-color: #172b4d;">Simpan</button>
-                            <button type="button" class="btn"
-                                style="background-color: #fff; color: #172b4d; border: 1px solid #172b4d;">Batal</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-    {{-- End Main Content --}}
+    {{-- end main content --}}
 @endsection

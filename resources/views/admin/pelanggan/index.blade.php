@@ -43,6 +43,22 @@
 
                 <div class="card-body">
                     <div class="table-responsive">
+                        <form method="GET" action="{{ route('pelanggan.index') }}"
+                            class="mb-3">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <select name="gender" class="form-select"  onchange="this.form.submit()">
+                                        <option value="">All</option>
+                                        <option value="Male" {{ request('gender') == 'Male' ? 'selected' : '' }}>Male
+                                        </option>
+                                        <option value="Female" {{ request('gender') == 'Female' ? 'selected' : '' }}>Female
+                                        <option value="Other" {{ request('gender') == 'Other' ? 'selected' : '' }}>Other
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+
                         <table id="table-pelanggan" class="table table-centered table-nowrap mb-0 rounded">
                             <thead class="thead-light">
                                 <tr>
@@ -95,9 +111,9 @@
                                 @endforeach
                             </tbody>
                         </table>
-                           <div class="mt-3">
-        {{ $dataPelanggan->links('pagination::bootstrap-5') }}
-    </div>
+                        <div class="mt-3">
+                            {{ $dataPelanggan->links('pagination::bootstrap-5') }}
+                        </div>
                     </div>
                 </div>
             </div>

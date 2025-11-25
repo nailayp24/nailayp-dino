@@ -39,10 +39,16 @@
         <div class="col-12 mb-4">
             <div class="card border-0 shadow components-section">
                 <div class="card-body">
-                    <form action="{{ route('user.store') }}" method="POST">
+                    <form action="{{ route('user.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row mb-4">
                             <div class="col-lg-4 col-sm-6">
+                                <!-- Profile Picture -->
+                                <div class="mb-3">
+                                    <label for="profile_picture" class="form-label">Foto Profil</label>
+                                    <input type="file" id="profile_picture" class="form-control" name="profile_picture" accept="image/*">
+                                    <small class="text-muted">Format: JPEG, PNG, JPG, GIF (Max: 2MB)</small>
+                                </div>
 
                                 <!-- Name -->
                                 <div class="mb-3">
@@ -64,26 +70,21 @@
                                     <input type="password" id="password" class="form-control" name="password">
                                 </div>
 
-                                <div class="col-lg-4 col-sm-6">
                                 <!-- Password Confirmation -->
                                 <div class="mb-3">
                                     <label for="password_confirmation" class="form-label">Password Confirmation</label>
                                     <input type="password" id="password_confirmation" class="form-control" name="password_confirmation">
                                 </div>
-                            </div>
-
 
                                 <!-- Buttons -->
-                                <div class="">
+                                <div class="mt-4">
                                     <button type="submit" class="btn btn-primary">Simpan</button>
-                                    <a href="{{ route('user.index') }}"
-                                        class="btn btn-outline-secondary ms-2">Batal</a>
+                                    <a href="{{ route('user.index') }}" class="btn btn-outline-secondary ms-2">Batal</a>
                                 </div>
                             </div>
                         </div>
                     </form>
                 </div>
-
             </div>
         </div>
     </div>

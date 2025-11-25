@@ -47,10 +47,11 @@ Route::post('question/store', [QuestionController::class, 'store'])
 Route::get('dashboard', [DashboardController::class, 'index'])
     ->name('dashboard');
 
-
+// Pelanggan Routes dengan multiple file upload
 Route::resource('pelanggan', PelangganController::class);
+Route::delete('/pelanggan-file/{id}', [PelangganController::class, 'deleteFile'])
+    ->name('pelanggan.deleteFile'); 
 
+// User Routes dengan foto profil
 Route::resource('user', UserController::class);
 
-
-Route::resource('products', ProductController::class);

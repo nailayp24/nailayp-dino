@@ -10,7 +10,7 @@ class AuthController extends Controller
 {
     public function index()
     {
-          if (!Auth::check()) {
+          if (Auth::check()) {
 		       //Redirect ke halaman login
                return redirect()->route('dashboard');
 		    }

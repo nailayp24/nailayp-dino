@@ -47,6 +47,7 @@
                                     <th class="border-0">Foto Profil</th>
                                     <th class="border-0">Name</th>
                                     <th class="border-0">Email</th>
+                                     <th class="border-0">Role</th>
                                     <th class="border-0">Aksi</th>
                                 </tr>
                             </thead>
@@ -64,6 +65,7 @@
                                         </td>
                                         <td>{{ $item->name }}</td>
                                         <td>{{ $item->email }}</td>
+                                         <td>{{ $item->role }}</td>
                                         <td>
                                             <div class="btn-group" role="group">
                                                 <a href="{{ route('user.edit', $item->id) }}"
@@ -81,7 +83,7 @@
                                                     method="POST" style="display:inline">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm" 
+                                                    <button type="submit" class="btn btn-danger btn-sm"
                                                             onclick="return confirm('Apakah Anda yakin ingin menghapus user ini?')">
                                                         <svg class="icon icon-xs me-1" data-slot="icon" fill="none"
                                                             stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24"
@@ -100,7 +102,7 @@
                             </tbody>
                         </table>
                     </div>
-                    
+
                     <!-- Pagination -->
                     <div class="mt-4 d-flex justify-content-between align-items-center">
                         <div class="text-muted">

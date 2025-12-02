@@ -25,62 +25,114 @@
                 <p class="mb-0">Form untuk menambahkan data User baru.</p>
             </div>
             <div>
-                <a href="{{ route('user.index') }}" class="btn btn-primary"><i class="far fa-question-circle me-1"></i>
-                    Kembali</a>
+                <a href="{{ route('user.index') }}" class="btn btn-primary">
+                    <i class="far fa-question-circle me-1"></i> Kembali
+                </a>
             </div>
         </div>
     </div>
-    @if (session('success'))
-        <div class="alert alert-info">
-            {!! session('success') !!}
+
+    {{-- TAMPILKAN ERROR VALIDASI --}}
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul class="mb-0">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
         </div>
     @endif
+
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
     <div class="row">
         <div class="col-12 mb-4">
             <div class="card border-0 shadow components-section">
                 <div class="card-body">
                     <form action="{{ route('user.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <div class="row mb-4">
-                            <div class="col-lg-4 col-sm-6">
-                                <!-- Profile Picture -->
-                                <div class="mb-3">
-                                    <label for="profile_picture" class="form-label">Foto Profil</label>
-                                    <input type="file" id="profile_picture" class="form-control" name="profile_picture" accept="image/*">
-                                    <small class="text-muted">Format: JPEG, PNG, JPG, GIF (Max: 2MB)</small>
-                                </div>
 
+                        <div class="row mb-4">
+                            <div class="col-lg-6">
                                 <!-- Name -->
                                 <div class="mb-3">
-                                    <label for="name" class="form-label">Name</label>
-                                    <input type="text" id="name" class="form-control" required name="name">
+                                    <label for="name" class="form-label">Nama Lengkap <span class="text-danger">*</span></label>
+                                    <input type="text" id="name" class="form-control @error('name') is-invalid @enderror"
+                                           name="name" value="{{ old('name') }}" required>
+                                    @error('name')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <!-- Email -->
                                 <div class="mb-3">
-                                    <label for="email" class="form-label">Email</label>
-                                    <input type="text" id="email" class="form-control" required name="email">
+                                    <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+                                    <input type="email" id="email" class="form-control @error('email') is-invalid @enderror"
+                                           name="email" value="{{ old('email') }}" required>
+                                    @error('email')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
+                                <!-- Role -->
+                                <div class="mb-3">
+                                    <label for="role" class="form-label">Role <span class="text-danger">*</span></label>
+                                    <select id="role" name="role" class="form-select @error('role') is-invalid @enderror" required>
+                                        <option value="">-- Pilih Role --</option>
+                                        <option value="admin" {{ old('role') == 'admin' ? 'selected' : '' }}>Admin</option>
+                                        <option value="pelanggan" {{ old('role') == 'pelanggan' ? 'selected' : '' }}>Pelanggan</option>
+                                                                                <option value="user" {{ old('role') == 'user' ? 'selected' : '' }}>User</option>
+                                    </select>
+                                    @error('role')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
                                 </div>
                             </div>
 
-                            <div class="col-lg-4 col-sm-6">
+                            <div class="col-lg-6">
                                 <!-- Password -->
                                 <div class="mb-3">
-                                    <label for="password" class="form-label">Password</label>
-                                    <input type="password" id="password" class="form-control" name="password">
+                                    <label for="password" class="form-label">Password <span class="text-danger">*</span></label>
+                                    <input type="password" id="password" class="form-control @error('password') is-invalid @enderror"
+                                           name="password" required>
+                                    @error('password')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <!-- Password Confirmation -->
                                 <div class="mb-3">
-                                    <label for="password_confirmation" class="form-label">Password Confirmation</label>
-                                    <input type="password" id="password_confirmation" class="form-control" name="password_confirmation">
+                                    <label for="password_confirmation" class="form-label">Konfirmasi Password <span class="text-danger">*</span></label>
+                                    <input type="password" id="password_confirmation" class="form-control"
+                                           name="password_confirmation" required>
                                 </div>
 
-                                <!-- Buttons -->
-                                <div class="mt-4">
-                                    <button type="submit" class="btn btn-primary">Simpan</button>
-                                    <a href="{{ route('user.index') }}" class="btn btn-outline-secondary ms-2">Batal</a>
+                                <!-- Profile Picture -->
+                                <div class="mb-3">
+                                    <label for="profile_picture" class="form-label">Foto Profil</label>
+                                    <input type="file" id="profile_picture" class="form-control @error('profile_picture') is-invalid @enderror"
+                                           name="profile_picture" accept="image/*">
+                                    <small class="text-muted">Format: JPEG, PNG, JPG, GIF (Maks: 2MB)</small>
+                                    @error('profile_picture')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
                                 </div>
+                            </div>
+                        </div>
+
+                        <!-- Buttons -->
+                        <div class="row">
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-save me-1"></i> Simpan
+                                </button>
+                                <a href="{{ route('user.index') }}" class="btn btn-outline-secondary ms-2">
+                                    <i class="fas fa-times me-1"></i> Batal
+                                </a>
                             </div>
                         </div>
                     </form>

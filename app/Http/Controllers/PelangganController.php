@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pelanggan;
-use App\Models\Multipleuploads;
 use Illuminate\Http\Request;
+use App\Models\Multipleuploads;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class PelangganController extends Controller

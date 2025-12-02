@@ -45,7 +45,7 @@
                     <form action="{{ route('pelanggan.update', $pelanggan->pelanggan_id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
-                        
+
                         <!-- Input Hidden untuk ref_table dan ref_id -->
                         <input type="hidden" name="ref_table" value="pelanggan">
                         <input type="hidden" name="ref_id" value="{{ $pelanggan->pelanggan_id }}">
@@ -55,21 +55,21 @@
                                 <!-- First Name -->
                                 <div class="mb-3">
                                     <label for="first_name" class="form-label">First Name</label>
-                                    <input type="text" id="first_name" class="form-control" required 
+                                    <input type="text" id="first_name" class="form-control" required
                                            name="first_name" value="{{ $pelanggan->first_name }}">
                                 </div>
 
                                 <!-- Last Name -->
                                 <div class="mb-3">
                                     <label for="last_name" class="form-label">Last Name</label>
-                                    <input type="text" id="last_name" class="form-control" required 
+                                    <input type="text" id="last_name" class="form-control" required
                                            name="last_name" value="{{ $pelanggan->last_name }}">
                                 </div>
 
                                 <!-- Birthday -->
                                 <div class="mb-3">
                                     <label for="birthday" class="form-label">Birthday</label>
-                                    <input type="date" id="birthday" class="form-control" 
+                                    <input type="date" id="birthday" class="form-control"
                                            name="birthday" value="{{ $pelanggan->birthday }}">
                                 </div>
                             </div>
@@ -89,14 +89,14 @@
                                 <!-- Email -->
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email</label>
-                                    <input type="email" id="email" class="form-control" required 
+                                    <input type="email" id="email" class="form-control" required
                                            name="email" value="{{ $pelanggan->email }}">
                                 </div>
 
                                 <!-- Phone -->
                                 <div class="mb-3">
                                     <label for="phone" class="form-label">Phone</label>
-                                    <input type="text" id="phone" class="form-control" 
+                                    <input type="text" id="phone" class="form-control"
                                            name="phone" value="{{ $pelanggan->phone }}">
                                 </div>
                             </div>
@@ -114,7 +114,7 @@
                                         <!-- Form Upload File Baru -->
                                         <div class="mb-4">
                                             <label for="files" class="form-label">Tambah File Baru</label>
-                                            <input type="file" id="files" class="form-control" 
+                                            <input type="file" id="files" class="form-control"
                                                    name="files[]" multiple accept=".jpg,.jpeg,.png,.pdf,.doc,.docx,.txt">
                                             <small class="text-muted">Format: JPG, JPEG, PNG, PDF, DOC, DOCX, TXT (Max: 2MB per file)</small>
                                         </div>
@@ -151,7 +151,7 @@
                                                                         <a href="{{ $file->file_url }}" target="_blank" class="btn btn-sm btn-info">
                                                                             <i class="fas fa-eye"></i>
                                                                         </a>
-                                                                        <button type="button" class="btn btn-sm btn-danger delete-file" 
+                                                                        <button type="button" class="btn btn-sm btn-danger delete-file"
                                                                                 data-file-id="{{ $file->id }}">
                                                                             <i class="fas fa-trash"></i>
                                                                         </button>

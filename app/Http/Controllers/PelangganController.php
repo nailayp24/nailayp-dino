@@ -14,6 +14,10 @@ class PelangganController extends Controller
      */
     public function index()
     {
+          if (!Auth::check()) {
+		       //Redirect ke halaman login
+               return redirect()->route('auth');
+		    }
         $data['dataPelanggan'] =  Pelanggan::paginate(10);
         return view('admin.pelanggan.index', $data);
     }
@@ -58,7 +62,7 @@ class PelangganController extends Controller
                 if ($file->isValid()) {
                     $filename = round(microtime(true) * 1000) . '-' . str_replace(' ', '-', $file->getClientOriginalName());
                     $file->move(public_path('uploads'), $filename);
-                    
+
                     $files[] = [
                         'filename' => $filename,
                         'ref_table' => 'pelanggan',
@@ -125,7 +129,7 @@ class PelangganController extends Controller
                 if ($file->isValid()) {
                     $filename = round(microtime(true) * 1000) . '-' . str_replace(' ', '-', $file->getClientOriginalName());
                     $file->move(public_path('uploads'), $filename);
-                    
+
                     $files[] = [
                         'filename' => $filename,
                         'ref_table' => 'pelanggan',
@@ -138,7 +142,7 @@ class PelangganController extends Controller
             Multipleuploads::insert($files);
         }
 
-        return redirect()->route('pelanggan.detail', $id)->with('success', 'Data Pelanggan berhasil diupdate!');
+        return redirect()->route('pelanggan.show', $id)->with('success', 'Data Pelanggan berhasil diupdate!');
     }
 
     /**
@@ -171,17 +175,17 @@ class PelangganController extends Controller
     public function deleteFile(Request $request, string $id)
     {
         $file = Multipleuploads::findOrFail($id);
-        
+
         // Pastikan file milik pelanggan yang dimaksud
         if ($file->ref_table === 'pelanggan') {
             if (file_exists(public_path('uploads/' . $file->filename))) {
                 unlink(public_path('uploads/' . $file->filename));
             }
             $file->delete();
-            
+
             return response()->json(['success' => true, 'message' => 'File berhasil dihapus']);
         }
-        
+
         return response()->json(['success' => false, 'message' => 'File tidak ditemukan'], 404);
     }
 }
